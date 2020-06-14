@@ -1,5 +1,4 @@
 <view class="{{show_guide?'hide_guide':'container'}}">
-	<text>666</text>
 	<view style="width:750rpx;">
 		<view wx:if="{{!counterend}}" style="background:#189EFB;color:#fff;font-size:20px;text-align:center;padding:20rpx 0;">
 			距离 2020-07-07 全国统一高考仅剩
