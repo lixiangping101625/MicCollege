@@ -1,0 +1,140 @@
+<view class="container">
+  <!-- 院校信息 -->
+  <view wx:if="{{school!=null}}" class="container section">
+    <text style="font-size:17px;margin-bottom:15rpx;">院校信息</text>
+    <view style="display:flex;justify-content:left;width:100%;">
+      <label>院校名称:</label>
+      <text space="nbsp">   {{school.school_name}}</text>
+    </view>
+    <view style="display:flex;justify-content:left;width:100%;">
+      <label>归属:</label>
+      <text space="nbsp">   {{school.belong_to}}</text>
+    </view>
+    <view style="display:flex;justify-content:left;width:100%;">
+      <label>办学层次:</label>
+      <text space="nbsp">   {{school.college_level}}</text>
+    </view>
+    <view style="display:flex;justify-content:left;width:100%;">
+      <label>地址:</label>
+      <text space="nbsp">   {{school.province_name}} {{school.city_name}}</text>
+    </view>
+    <view style="display:flex;justify-content:left;width:100%;">
+      <label>报考热度排名:</label>
+      <text space="nbsp">   {{school.sign_up_rank}}</text>
+    </view>
+    <view style="display:flex;justify-content:left;width:100%;">
+      <label>{{school.classify_name}}报考热度排名:</label>
+      <text space="nbsp">   {{school.classify_rank}}</text>
+    </view>
+    <view style="display:flex;justify-content:left;width:100%;">
+      <label>学校网址:</label>
+      <text space="nbsp">   {{school.enroll_site}}</text>
+    </view>
+    <view style="display:flex;justify-content:left;width:100%;">
+      <label>联系方式:</label>
+      <text space="nbsp">   {{school.contact}}</text>
+    </view>
+    <view style="display:flex;justify-content:left;width:100%;">
+      <label>邮箱:</label>
+      <text wx:if="{{school.email.length>0}}" space="nbsp">   {{school.email}}</text>
+      <text wx:if="{{school.email.length===0}}" space="nbsp">   暂无</text>
+    </view>
+  </view>
+  
+  <!-- 专业信息 -->
+  <view wx:if="{{profession!=null}}" class="container section">
+    <text style="font-size:17px;margin-bottom:15rpx;">专业信息</text>
+    <view style="display:flex;justify-content:left;width:100%;">
+      <label>文/理科:</label>
+      <text wx:if="{{profession.genera===0}}" space="nbsp">   文科</text>
+      <text wx:elif="{{profession.genera===1}}" space="nbsp">   理科</text>
+    </view>
+    <view style="display:flex;justify-content:left;width:100%;">
+      <label>专业名称:</label>
+      <text space="nbsp">   {{profession.profession_name}}</text>
+    </view>
+    <!-- <view style="display:flex;justify-content:left;width:100%;">
+      <label>专业批次:</label>
+      <text space="nbsp">   {{profession.admission_batch}}</text>
+    </view> -->
+  </view>
+
+  <!-- 院校分数线:专业未选时展示 -->
+  <view class="container section">
+    <view class="juzhong" style="width:100%;margin-bottom:16rpx;font-size:17px;">院校分数线</view>
+    <view class="display_row" style="width:100%;">
+      <view class="juzhong head">院校名称</view>
+      <view class="juzhong head">年份</view>
+      <view class="juzhong head">录取批次</view>
+      <view class="juzhong head">最低</view>
+      <view class="juzhong head">平均</view>
+      <view class="juzhong head" style="border:solid 0px;">最高</view>
+    </view>
+    <view wx:for="{{school_lines}}" item="item" class="display_row" style="width:100%;">
+      <view class="juzhong head">{{school.school_name}}</view>
+      <view class="juzhong head">{{item.year}}</view>
+      <view class="juzhong head">{{item.admission_batch}}</view>
+      <view class="juzhong head">{{item.minToMaxScoreList[0]}}</view>
+      <view class="juzhong head">{{item.minToMaxScoreList[1]}}</view>
+      <view class="juzhong head" style="border:solid 0px;">{{item.minToMaxScoreList[2]}}</view>
+    </view>
+    <view wx:if="{{school_lines.length===0}}" class="display_row" style="width:100%;">
+      <view class="juzhong" style="width:100%;background:#ababab;">
+        数据更新中
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 指定专业分数线：专业已选时展示 -->
+  <view wx:if="{{profession!=mull}}" class="container section" style="margin-bottom:300rpx;">
+    <view class="juzhong" style="width:100%;margin-bottom:16rpx;font-size:17px;">专业分数线</view>
+    <view class="display_row" style="width:100%;">
+      <!-- <view class="juzhong head">专业</view> -->
+      <view class="juzhong head">年份</view>
+      <view class="juzhong head">录取批次</view>
+      <view class="juzhong head">最低</view>
+      <view class="juzhong head">平均</view>
+      <view class="juzhong head" style="border:solid 0px;">最高</view>
+    </view>
+    <view wx:for="{{profession_lines}}" item="item" class="display_row" style="width:100%;">
+      <!-- <view class="juzhong head yichu">{{profession.profession_name}}</view> -->
+      <view class="juzhong head">{{item.year}}</view>
+      <view class="juzhong head">{{item.admission_batch}}</view>
+      <view class="juzhong head">{{item.minToMaxScoreList[0]}}</view>
+      <view class="juzhong head">{{item.minToMaxScoreList[1]}}</view>
+      <view class="juzhong head" style="border:solid 0px;">{{item.minToMaxScoreList[2]}}</view>
+    </view>
+    <view wx:if="{{profession_lines.length===0}}" class="display_row" style="width:100%;">
+      <view class="juzhong" style="width:100%;background:#ababab;">
+        数据更新中
+      </view>
+    </view>
+  </view> 
+
+	<!-- 图片 -->
+	<view style="width:730rpx;margin-top:8rpx;position:fixed;bottom:6rpx;">
+		<swiper style="height:280rpx;" autoplay='true' duration='1000' interval='1500' circular='true' easing-function='easeInOutCubic'>
+			<swiper-item>
+				<image bindtap="video_class" class="bottom_img" src="http://c.px.jiaodong.net/upimages/90/F2/C3/32/2705C02A.jpg"></image>
+			</swiper-item>
+			<swiper-item>
+				<image bindtap="video_class" class="bottom_img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1584405838910&di=e036b0dda34b0cb663786a3158cdaac5&imgtype=0&src=http%3A%2F%2Fgss0.baidu.com%2F-fo3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fpic%2Fitem%2F43a7d933c895d143fb605ffb74f082025baf07d7.jpg"></image>
+			</swiper-item>
+		</swiper>
+	</view>
+  
+</view>
+
+<l-loading
+  l-container-class="l-container"
+  bg-color="#f3f3f3"
+  z-index="776"
+  opacity="1"
+  show="{{show_loading==1}}"
+  full-screen="{{true}}"
+  custom="{{true}}"
+>
+  <!-- <image class="loading-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589996891279&di=3042fc294219daf33f115b2aa9633e3e&imgtype=0&src=http%3A%2F%2Ftc.sinaimg.cn%2Fmaxwidth.2048%2Ftc.service.weibo.com%2Fp%2Fjy_sccnn_com%2F334245f1e475c61d070fe07822f9c904.gif"></image> -->
+  <image class="loading-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589997444134&di=e9cb4fd6e777a736f21352a6bb8e643a&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F1be943b8d8d5e1e22bce51db17d1f287db682b93798d-AKRlDw_fw658"></image>
+</l-loading>

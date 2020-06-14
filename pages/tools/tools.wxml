@@ -1,0 +1,63 @@
+<view class="container">
+    <!--搜索框-->
+    <view class="container" style="width:750rpx;margin:20rpx 0;">
+        <view class="display_row" style="width:710rpx;font-size:14px;border-radius: 30rpx;background:#fff;">
+            <input bindtap="search" disabled="disabled" bindinput="" value="{{}}" style="width:622rpx;border:solid 0px;"></input>
+            <icon type="search" size="20" style="width:50rpx;margin-left:8rpx;"></icon>
+        </view>
+    </view>
+
+    <block wx:for="{{arr}}" wx:for-index="index" wx:for-item="item">
+        <view class="container" style="width:710rpx;margin-bottom:8rpx;" data-id="{{item.id}}" bindtap="detail">
+            <view class="display_row" style="width:710rpx;margin-top:6rpx;">
+                <view class="out_view" style="width:70%;height:40rpx;padding-left:8rpx;font-size:14px;margin-bottom:3rpx;">{{item.title}}</view>
+                <view style="text-align: center;font-size:12px;color:#666;">{{item.release_time}}</view>
+            </view>
+        </view>
+    </block>
+
+
+    <view class="container" style="width:710rpx;margin-top:10rpx;margin-bottom:20rpx;">
+        <view style="width:100%;font-size:14px;color:blue;padding-bottom:3rpx;text-align: right;">更多></view>
+    </view>
+
+
+    <view class="container" style="width:710rpx;padding:12rpx;">
+
+        <view class="" style="width:710rpx;margin-bottom: 15rpx;font-size:16px;">志愿名词</view>
+        <view class="display_row" style="width:710rpx;">
+            <view class="juzhong tool" style=" margin-right:20rpx;" bindtap="show_detail" data-id="{{noun_arr[0].id}}">{{noun_arr[0].noun}}</view>
+            <view class="juzhong tool" style=" margin-right:20rpx;" bindtap="show_detail" data-id="{{noun_arr[1].id}}">{{noun_arr[1].noun}}</view>
+            <view class="juzhong tool" style=" margin-right:20rpx;" bindtap="show_detail" data-id="{{noun_arr[2].id}}">{{noun_arr[2].noun}}</view>
+            <view class="juzhong tool" style="" bindtap="show_detail" data-id="{{noun_arr[3].id}}">{{noun_arr[3].noun}}</view>
+        </view>
+        <view class="display_row" style="width:710rpx;margin-top:20rpx;">
+            <view class="juzhong tool" style=" margin-right:20rpx;" bindtap="show_detail" data-id="{{noun_arr[4].id}}">{{noun_arr[4].noun}}</view>
+            <view class="juzhong tool" style=" margin-right:20rpx;" bindtap="show_detail" data-id="{{noun_arr[5].id}}">{{noun_arr[5].noun}}</view>
+            <view class="juzhong tool" style=" margin-right:20rpx;" bindtap="show_detail" data-id="{{noun_arr[6].id}}">{{noun_arr[6].noun}}</view>
+            <view class="juzhong tool" style="" bindtap="show_detail" data-id="{{noun_arr[7].id}}">{{noun_arr[7].noun}}</view>
+        </view>
+        <view class="display_row" style="width:710rpx;margin-top:20rpx;">
+            <view class="juzhong tool" style=" margin-right:20rpx;" bindtap="show_detail" data-id="{{noun_arr[8].id}}">{{noun_arr[8].noun}}</view>
+            <view class="juzhong tool" style=" margin-right:20rpx;" bindtap="show_detail" data-id="{{noun_arr[9].id}}">{{noun_arr[9].noun}}</view>
+            <view class="juzhong tool" style=" margin-right:20rpx;" bindtap="show_detail" data-id="{{noun_arr[10].id}}">{{noun_arr[10].noun}}</view>
+            <view class="juzhong tool" style="" bindtap="show_detail" data-id="{{noun_arr[11].id}}">{{noun_arr[11].noun}}</view>
+        </view>
+    </view>
+
+    <!-- 弹出层 -->
+    <view catchtouchmove="true" class="{{show_larger===1? 'mengban':'display_none'}}" style="height:{{detail_height+'px'}};">
+        <view class="{{show_larger===1? 'container':'display_none'}}" style="position: fixed;width:85%;border-radius:26rpx;">
+            <!-- 浮动展示大图 -->
+            <scroll-view scroll-y="true" style="width:auto;padding-left:25rpx;padding-right:25rpx;padding-bottom:10rpx;height:{{(detail_height-100)+'px'}};">
+                {{explanation}}
+            </scroll-view>
+            <view class="container" style="background:#A3F5B3;padding-top: 8rpx;width: 100%;border-radius: 26rpx;">
+                <view class="main">
+                    <icon type="clear" size="36" bindtap="closer"></icon>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>

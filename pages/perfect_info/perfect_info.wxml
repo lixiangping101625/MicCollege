@@ -1,0 +1,85 @@
+<!-- 完善资料：keshu、score、gender -->
+<view class="container" style="padding-top:15rpx;">
+  <form style="padding-bottom:110rpx;border-radius: 30rpx;background:#F1EFF6;width:700rpx;" bindsubmit='formSubmit' bindreset='formReset'>
+    <view style="font-size:12px;padding-left:25rpx;color:red;">提示:</view>
+    <view style="font-size:12px;padding-left:30rpx;color:red;">建议您完善下列信息，查询更准确高效(推荐更个性)！详情请参见首页
+      <text style="color:#000;">‘产品介绍—个性化推荐’</text>。</view>
+    <view class="display_row" style="margin-top:50rpx;">
+      <view class="sept1">总分 *：</view>
+      <input disabled="{{pass_by_regist==0 || total!=0}}" class="{{pass_by_regist==0 || total!=0? 'zhifu':''}}" placeholder="total score" value="{{total_score}}" type="digit" maxlength="5" bindinput="input_total"></input>
+    </view>
+    <view class="display_row" style="margin-top:18rpx;">
+      <view class="sept1">语文：</view>
+      <input disabled="{{pass_by_regist==0 || total!=0}}" class="{{pass_by_regist==0 || total!=0? 'zhifu':''}}" placeholder="yw score" value="{{yw}}" type="digit" maxlength="5" bindinput="input_yw"></input>
+    </view>
+    <view class="display_row" style="margin-top:18rpx;">
+      <view class="sept1">数学：</view>
+      <input disabled="{{pass_by_regist==0 || total!=0}}" class="{{pass_by_regist==0 || total!=0? 'zhifu':''}}" placeholder="sx score" value="{{sx}}" type="digit" maxlength="5" bindinput="input_sx"></input>
+    </view>
+    <view class="display_row" style="margin-top:18rpx;">
+      <view class="sept1">英语：</view>
+      <input disabled="{{pass_by_regist==0 || total!=0}}" class="{{pass_by_regist==0 || total!=0? 'zhifu':''}}" placeholder="yy score" value="{{yy}}" type="digit" maxlength="5" bindinput="input_yy"></input>
+    </view>
+    <view class="display_row">
+      <view class="sept1">文/理科：</view>
+      <!-- 0--wen  1--li -->
+      <radio-group class="radio-group" bindchange="genera_change" style="width:324rpx;" class="{{pass_by_regist==0 || total!=0? 'zhifu':''}}">
+        <radio disabled="{{pass_by_regist==0 || total!=0}}" class="{{pass_by_regist==0 || total!=0? 'zhifu':'radio'}}" value="0" checked="{{genera==0}}">文科</radio>
+        <radio disabled="{{pass_by_regist==0 || total!=0}}" class="{{pass_by_regist==0 || total!=0? 'zhifu':'radio'}}" value="1" checked="{{genera==1}}">理科 </radio>
+      </radio-group>
+    </view>
+    <!-- wk -->
+    <view wx:if="{{genera==0}}">
+      <view class="display_row" style="margin-top:18rpx;">
+        <view class="sept1">历史：</view>
+        <input disabled="{{pass_by_regist==0 || total!=0}}" class="{{pass_by_regist==0 || total!=0? 'zhifu':''}}" placeholder="ls score" value="{{ls}}" type="digit" maxlength="5" bindinput="input_ls"></input>
+      </view>
+      <view class="display_row" style="margin-top:18rpx;">
+        <view class="sept1">地理：</view>
+        <input disabled="{{pass_by_regist==0 || total!=0}}" class="{{pass_by_regist==0 || total!=0? 'zhifu':''}}" placeholder="dl score" value="{{dl}}" type="digit" maxlength="5" bindinput="input_dl"></input>
+      </view>
+      <view class="display_row" style="margin-top:18rpx;">
+        <view class="sept1">政治：</view>
+        <input disabled="{{pass_by_regist==0 || total!=0}}" class="{{pass_by_regist==0 || total!=0? 'zhifu':''}}" placeholder="zz score" value="{{zz}}" type="digit" maxlength="5" bindinput="input_zz"></input>
+      </view>
+    </view>
+    <view wx:if="{{genera==1}}">
+      <!-- lk -->
+      <view class="display_row" style="margin-top:18rpx;">
+        <view class="sept1">生物：</view>
+        <input disabled="{{pass_by_regist==0 || total!=0}}" class="{{pass_by_regist==0 || total!=0? 'zhifu':''}}" placeholder="sw score" value="{{sw}}" type="digit" maxlength="5" bindinput="input_sw"></input>
+      </view>
+      <view class="display_row" style="margin-top:18rpx;">
+        <view class="sept1">物理：</view>
+        <input disabled="{{pass_by_regist==0 || total!=0}}" class="{{pass_by_regist==0 || total!=0? 'zhifu':''}}" placeholder="wl score" value="{{wl}}" type="digit" maxlength="5" bindinput="input_wl"></input>
+      </view>
+      <view class="display_row" style="margin-top:18rpx;">
+        <view class="sept1">化学：</view>
+        <input disabled="{{pass_by_regist==0 || total!=0}}" class="{{pass_by_regist==0 || total!=0? 'zhifu':''}}" placeholder="hz score" value="{{hx}}" type="digit" maxlength="5" bindinput="input_hx"></input>
+      </view>
+    </view>
+    <!-- <view style="margin-top:50rpx;" class="display_row">其他信息</view>
+    <view class="display_row">
+      <view class="sept1">手机：</view>
+      <input placeholder="mobile" type="digit" maxlength="5" bindinput="input_mobile"></input>
+    </view>
+    <view class="display_row">
+      <view class="sept1">年龄：</view>
+      <input placeholder="age" type="number" maxlength="2" bindinput="input_age"></input>
+    </view> -->
+    <view class="display_row">
+      <view class="sept1">性别：</view>
+      <!-- <input placeholder="gender" type="digit" maxlength="5" bindinput="input_gender"></input> -->
+      <!-- 0--girl  1--boy -->
+      <radio-group class="radio-group" bindchange="gender_change" style="width:324rpx;">
+        <radio disabled="{{pass_by_regist==0 || total!=0}}" class="{{pass_by_regist==0 || total!=0? 'zhifu':'radio'}}" value="1" checked="{{gender==1}}">男生 </radio>
+        <radio disabled="{{pass_by_regist==0 || total!=0}}" class="{{pass_by_regist==0 || total!=0? 'zhifu':'radio'}}" value="0" checked="{{gender==0}}">女生 </radio>
+      </radio-group>
+    </view>
+    <!-- pass_by_regist pay_success -->
+
+    <button bindtap="submit_form" wx:if="{{pass_by_regist==1 && pay_success==1}}" style="margin-top:18rpx;width: 476rpx">提交</button>
+    <button bindtap="modify_pay" wx:if="{{pay_success==0}}" style="margin-top:18rpx;width: 476rpx">1元修改</button>
+  </form>
+
+</view>

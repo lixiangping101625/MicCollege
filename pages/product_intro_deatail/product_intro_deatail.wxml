@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="container">
+    <!-- 标题 -->
+    <view style="font-size:16px;" class="display_row">{{introduce.title}}</view>
+    <view style="height:50rpx;padding:0 8rpx;"></view>
+
+    <view style="background:white;">
+      <block wx:for="{{introduce_items}}" wx:for-item="item" wx:for-index="index">
+        <image wx:if="{{item.has_img==1}}" style="width:750rpx;height:300rpx;" src="{{item.img}}"></image>
+        <view style="font-size:14px;" class="display_row">{{item.sub_title}}</view>
+        <view style="font-size:12px; pading:2rpx; 5rpx;">
+          <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text> {{item.content}}
+        </view>
+      </block>
+    </view>
+
+  </view>
+</view>

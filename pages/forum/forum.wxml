@@ -1,0 +1,109 @@
+<view class="{{show_guide?'hide_guide':'container'}}">
+
+	<!-- 宣传视频 -->
+	<view class="container" style="width:750rpx;padding-bottom:12rpx;background:#33ff66;">
+		<view style="width:730rpx;">
+
+
+			<swiper autoplay='true' duration='1000' interval='1500' circular='true' easing-function='easeInOutCubic'>
+				<swiper-item>
+					<image bindtap="video_class" class="bottom_img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1584405907947&di=7ce648ba384fe5826a6c2169f6d59751&imgtype=0&src=http%3A%2F%2Fimg.mp.sohu.com%2Fupload%2F20170622%2F05c98c0b5922439586cf2b9f1f83e18c_th.png"></image>
+				</swiper-item>
+				<swiper-item>
+					<image bindtap="video_class" class="bottom_img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1584405838910&di=e036b0dda34b0cb663786a3158cdaac5&imgtype=0&src=http%3A%2F%2Fgss0.baidu.com%2F-fo3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fpic%2Fitem%2F43a7d933c895d143fb605ffb74f082025baf07d7.jpg"></image>
+				</swiper-item>
+				<swiper-item>
+					<image bindtap="video_class" class="bottom_img" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=945820642,493256733&fm=26&gp=0.jpg"></image>
+				</swiper-item>
+			</swiper>
+		</view>
+	</view>
+
+
+	<!-- 上部分 -->
+	<view style="width:750rpx;background:#33ff66" class="container">
+		<view style="width:730rpx;" class="display_row">
+			<view class="display_row" style="border-bottom: solid 1px #F1EFF6;">
+				<view bindtap="" style="width:219rpx;font-size: 16px;font-weight: 500;border-left: solid 3px #6F8580;" class="unselected">热门推荐</view>
+				<view bindtap="" style="border-radius:0 0 10rpx 10rpx;color:blue;font-size:12px;width:511rpx;text-align:right;">更多></view>
+			</view>
+		</view>
+
+		<view style="width:730rpx;margin-bottom:7rpx;" class="display_row">
+			<view style="width:30%;height:210rpx;">
+				<image style="width:100%;height:100%;border-radius: 0 0 0 30rpx;" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3180445519,2275138964&fm=26&gp=0.jpg"></image>
+			</view>
+			<view style="width:70%;height:210rpx;padding-left：6rpx;border-radius: 0 0 30rpx 0;" class="container">
+				<view style="width:100%;">再苦再难，也要为家人挣气！</view>
+				<view style="width:100%;">作者：XXX 会员级别：2级</view>
+				<view style="width:100%;">播放量：XXX 发布时间</view>
+			</view>
+		</view>
+		<view style="width:730rpx;margin-bottom:7rpx;" class="display_row">
+			<view style="width:30%;height:210rpx;">
+				<image style="width:100%;height:100%;border-radius: 0 0 0 30rpx;" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3180445519,2275138964&fm=26&gp=0.jpg"></image>
+			</view>
+			<view style="width:70%;height:210rpx;padding-left：6rpx;border-radius: 0 0 30rpx 0;" class="container">
+				<view style="width:100%;">再苦再难，也要为家人挣气！</view>
+				<view style="width:100%;">作者：XXX 会员级别：2级</view>
+				<view style="width:100%;">播放量：XXX 发布时间</view>
+			</view>
+		</view>
+		<view style="width:730rpx;margin-bottom:7rpx;" class="display_row">
+			<view style="width:30%;height:210rpx;">
+				<image style="width:100%;height:100%;border-radius: 0 0 0 30rpx;" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3180445519,2275138964&fm=26&gp=0.jpg"></image>
+			</view>
+			<view style="width:70%;height:210rpx;padding-left：6rpx;border-radius: 0 0 30rpx 0;" class="container">
+				<view style="width:100%;">再苦再难，也要为家人挣气！</view>
+				<view style="width:100%;">作者：XXX 会员级别：2级</view>
+				<view style="width:100%;">播放量：XXX 发布时间</view>
+			</view>
+		</view>
+		<view style="width:730rpx;margin-bottom:7rpx;" class="display_row">
+			<view style="width:30%;height:210rpx;">
+				<image style="width:100%;height:100%;border-radius: 0 0 0 30rpx;" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3180445519,2275138964&fm=26&gp=0.jpg"></image>
+			</view>
+			<view style="width:70%;height:210rpx;padding-left：6rpx;border-radius: 0 0 30rpx 0;" class="container">
+				<view style="width:100%;">再苦再难，也要为家人挣气！</view>
+				<view style="width:100%;">作者：XXX 会员级别：2级</view>
+				<view style="width:100%;">播放量：XXX 发布时间</view>
+			</view>
+		</view>
+		<view style="width:730rpx;margin-bottom:7rpx;" class="display_row">
+			<view style="width:30%;height:210rpx;">
+				<image style="width:100%;height:100%;border-radius: 0 0 0 30rpx;" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3180445519,2275138964&fm=26&gp=0.jpg"></image>
+			</view>
+			<view style="width:70%;height:210rpx;padding-left：6rpx;border-radius: 0 0 30rpx 0;" class="container">
+				<view style="width:100%;">再苦再难，也要为家人挣气！</view>
+				<view style="width:100%;">作者：XXX 会员级别：2级</view>
+				<view style="width:100%;">播放量：XXX 发布时间</view>
+			</view>
+		</view>
+		<view style="width:730rpx;margin-bottom:7rpx;" class="display_row">
+			<view style="width:30%;height:210rpx;">
+				<image style="width:100%;height:100%;border-radius: 0 0 0 30rpx;" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3180445519,2275138964&fm=26&gp=0.jpg"></image>
+			</view>
+			<view style="width:70%;height:210rpx;padding-left：6rpx;border-radius: 0 0 30rpx 0;" class="container">
+				<view style="width:100%;">再苦再难，也要为家人挣气！</view>
+				<view style="width:100%;">作者：XXX 会员级别：2级</view>
+				<view style="width:100%;">播放量：XXX 发布时间</view>
+			</view>
+		</view>
+	</view>
+	<!-- <swiper style="height: 95rpx;width: 750rpx;padding-left: 30rpx;background:#33ff66;" autoplay='true' vertical="true" duration='1000' interval='1500' circular='true' easing-function='easeInOutCubic'>
+		<swiper-item>
+			<view style="color: #000;width: 730rpx;font-size:15px">再苦再难，也要为家人挣气！</view>
+			<view style="color: #000;width: 730rpx;font-size:15px">只要肯努力一切都会好起来！</view>
+			<view style="color: #000;width: 730rpx;font-size:15px">补习一年终于上了二本线</view>
+		</swiper-item>
+		<swiper-item>
+			<view style="color: #000;width: 730rpx;font-size:15px">补习一年终于上了二本线</view>
+			<view style="color: #000;width: 730rpx;font-size:15px">再苦再难，也要为家人挣气！</view>
+			<view style="color: #000;width: 730rpx;font-size:15px">只要肯努力一切都会好起来！</view>
+		</swiper-item>
+	</swiper> -->
+
+
+
+
+</view>

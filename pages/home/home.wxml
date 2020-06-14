@@ -1,0 +1,125 @@
+<view class="{{show_guide?'hide_guide':'container'}}" style="padding:0 20rpx;">
+
+	<!-- 卡片展示 -->
+	<swiper vertical="true" interval="3000" circular="true" indicator-dots indicator-color="#f1f1f1" indicator-active-color="#189EFB" autoplay>
+		<swiper-item>
+			<l-card image-mode="scaleToFill" type="primary" l-class="l-class" l-img-class="l-img-class" position="right" full="true" image="{{fill_skill_list[0].sectionEntities[0].img_url}}" title="{{fill_skill_list[0].fillSkills.title}}">
+				<view class="content">
+					{{fill_skill_list[0].fillSkills.section1_content}}
+				</view>
+			</l-card>
+			<l-card type="primary" l-class="l-class" l-img-class="l-img-class" position="left" full="true" image="{{fill_skill_list[1].sectionEntities[1].img_url}}" title="{{fill_skill_list[1].fillSkills.title}}">
+				<view class="content">
+					{{fill_skill_list[1].fillSkills.section1_content}}
+				</view>
+			</l-card>
+		</swiper-item>
+		<swiper-item>
+			<l-card type="primary" l-class="l-class" l-img-class="l-img-class" position="right" full="true" image="{{fill_skill_list[0].sectionEntities[0].img_url}}" title="{{fill_skill_list[0].fillSkills.title}}">
+				<view class="content">
+					{{fill_skill_list[0].fillSkills.section1_content}}
+				</view>
+			</l-card>
+			<l-card type="primary" l-class="l-class" l-img-class="l-img-class" position="left" full="true" image="{{fill_skill_list[1].sectionEntities[1].img_url}}" title="{{fill_skill_list[1].fillSkills.title}}">
+				<view class="content">
+					{{fill_skill_list[1].fillSkills.section1_content}}
+				</view>
+			</l-card>
+		</swiper-item>
+	</swiper>
+
+	<!-- 下部分 -->
+	<view style="margin-top:8rpx;width:710rpx;" class="position_relative">
+		<view style="width:710rpx;background:none;border-radius:8rpx;padding:8rpx;" class="container">
+			<view style="width:710rpx; font-size: 16px;font-weight: 500;margin-top:15rpx;">分数线查询</view>
+			<view class="container1" style="margin-top:18rpx;background:#fff;width:710rpx;padding-left:20rpx;border-radius:18rpx;">
+				<view style="width:678rpx;margin:20rpx 0" class="display_row">
+					<view style="width:92rpx;font-size:14px;">省份：</view>
+					<picker bindchange="bindPickerChange4" value="{{prov_index}}" range="{{provinces}}" range-key="name">
+						<view style="width:478rpx;border-bottom: solid 1px;height: 54rpx;" class="juzhong simplerow">
+							{{provinces[prov_index].name}}
+						</view>
+					</picker>
+
+
+					<!-- <view style="width:92rpx;font-size:14px;padding-top:40rpx;">省份：</view>
+                    <picker bindchange="bindPickerChange" value="{{prov_index}}" range="{{provinces}}" range-key="name">
+                        <view style="width:478rpx;border-bottom: solid 1px;height: 54rpx;background:auqa;" class="juzhong">
+                            {{provinces[prov_index].name}}
+                        </view>
+                    </picker> -->
+				</view>
+				<view style="width:678rpx;margin-bottom:20rpx" class="display_row">
+					<view style="width:92rpx;font-size:14px;">城市：</view>
+					<picker bindchange="bindPickerChange2" value="{{city_index}}" range="{{cities}}" range-key="name">
+						<!-- {{cities[city_index].id}} -->
+						<view style="width:478rpx;border-bottom: solid 1px;height: 54rpx;background:auqa;" class="juzhong">
+							{{cities[city_index].name}}
+						</view>
+					</picker>
+				</view>
+				<view style="width:678rpx;margin-bottom:20rpx" class="display_row">
+					<view style="width:92rpx;font-size:14px;">学校：</view>
+					<picker bindchange="bindPickerChange3" value="{{school_index}}" range="{{schools}}" range-key="name">
+						<view style="width:478rpx;border-bottom: solid 1px;height: 54rpx;" class="juzhong simplerow">
+							{{schools[school_index].name}}
+						</view>
+					</picker>
+				</view>
+				<view style="width:678rpx;margin-bottom:20rpx" class="display_row">
+					<view style="width:92rpx;font-size:14px;">科别：</view>
+					<radio-group bindchange="generachange" style="width:339rpx;margin-left:139rpx;">
+						<radio checked="{{genera==0}}">文</radio>
+						<radio checked="{{genera==1}}" style="margin-left:20rpx;">理</radio>
+					</radio-group>
+				</view>
+				<view style="width:678rpx;margin-bottom:20rpx" class="display_row">
+					<view style="width:92rpx;font-size:14px;">专业：</view>
+					<picker bindchange="bindPickerChange4" value="{{profession_index}}" range="{{professions}}" range-key="name">
+						<view style="width:478rpx;border-bottom: solid 1px;height: 54rpx;" class="juzhong simplerow">
+							{{professions[profession_index].name}}
+						</view>
+					</picker>
+
+
+					<!-- <view style="width:92rpx;font-size:14px;">专业：</view>
+                    <picker wx:if="{{professions.length>0}}" bindchange="bindPickerChange4" value="{{profession_index}}" range="{{professions}}" range-key="name">
+                        <view style="width:478rpx;border-bottom: solid 1px;height: 54rpx;" class="juzhong simplerow">
+                            {{professions[profession_index].name}}
+                        </view>
+                    </picker> -->
+					<!-- <view wx:if="{{professions.length===0}}" style="width:300rpx;border: solid 1px;height: 54rpx;font-size: 12px;color: #ababab;" class="juzhong"></view> -->
+				</view>
+				<view style="width:570rpx;margin-bottom:40rpx;margin-top:20rpx;background:#fff;" class="container">
+					<view bindtap="query_line" class="container btn" style="margin-left:106rpx;margin-top:5rpx;width:100%;line-height: 31px;background:#189EFB;color:#fff;height: 40px;font-size: 14px;justify-content:center;">查询</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view style="margin-top:8rpx;width:710rpx;" class="position_relative">
+		<view style="width:710rpx;background:none;border-radius:8rpx;padding:8rpx;" class="container">
+			<view style="width:710rpx; font-size: 16px;font-weight: 500;margin-top:15rpx;">招生计划</view>
+			<view class="container1" style="margin-top:18rpx;background:#fff;width:710rpx;padding-left:20rpx;border-radius:18rpx;">
+				<view style="width:678rpx;margin:20rpx 0" class="display_row">
+					<view style="width:92rpx;font-size:14px;">院校：</view>
+					<picker bindchange="bindPickerChange2" value="{{city_index}}" range="{{cities}}" range-key="name">
+						<view style="width:478rpx;border-bottom: solid 1px;height: 54rpx;background:auqa;" class="juzhong">
+							南华大学
+						</view>
+					</picker>
+				</view>
+
+				<view style="width:570rpx;margin-bottom:40rpx;margin-top:20rpx;background:#fff;" class="container">
+					<view bindtap="query_enroll" class="container btn" style="margin-left:106rpx;margin-top:5rpx;width:100%;line-height: 31px;background:#189EFB;color:#fff;height: 40px;font-size: 14px;justify-content:center;">查询</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+</view>
+
+<!-- 启动全屏显示 -->
+<view class="{{show_guide?'diplay_guide':'hide_guide'}}" style="position:absolute;bottom:0px;">
+	<image style="width:750rpx;height:125px;" src="/pages/icon/00.png"></image>
+</view>

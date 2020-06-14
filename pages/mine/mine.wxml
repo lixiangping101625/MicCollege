@@ -1,0 +1,63 @@
+<view class="container">
+    <!-- 顶部 -->
+    <view id="card" class="display_row" style="padding:50rpx 0;color:white;">
+        <image style="width:150rpx;height:150rpx;border-radius:50%;" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJOq3HuXD0M2S8T9XpwRJYV56sy0uUcS0Y2EwLnfYIWGC7Vs0icRTBhTPeSGtLsv7YiatTgyhsT5icpg/132"></image>
+        <view>清风剑客</view>
+        <view style="margin-left:15rpx;">13239643034</view>
+        <!-- <view class="display_row">
+            <view>清风剑客</view>
+            <view style="height:60rpx;">13239643034</view>
+        </view> -->
+    </view>
+
+    <view class="container" style="width:750rpx;background:#fff;">
+        <view class="display_row oper" style="font-size: 14px;background: none;justify-content:left;" bindtap="">
+            <image src="../../icon/jieshao.png"></image>
+            <view style="width:620rpx;">产品介绍</view>
+            <view style="float:right;"> ></view>
+        </view>
+        <view class="display_row oper" style="font-size: 14px;background: none;justify-content:left;" bindtap="">
+            <image src="../../icon/fenshu.png"></image>
+            <view style="width:620rpx;">预估分数</view>
+            <view style="float:right;"> ></view>
+        </view>
+        <view class="display_row oper" style="font-size: 14px;background: none;justify-content:left;" bindtap="">
+            <image src="../../icon/gkls.png"></image>
+            <view style="width:620rpx;">观看记录</view>
+            <view style="float:right;"> ></view>
+        </view>
+        <view class="display_row oper" style="font-size: 14px;background: none;justify-content:left;" bindtap="">
+            <image src="../../icon/shoucang.png"></image>
+            <view style="width:620rpx;">我的收藏</view>
+            <view style="float:right;"> ></view>
+        </view>
+        <view class="display_row oper" style="font-size: 14px;background: none;justify-content:left;margin-bottom:0;" bindtap="">
+            <image src="../../icon/sousuo.png"></image>
+            <view style="width:620rpx;">搜索历史</view>
+            <view style="float:right;"> ></view>
+        </view>
+    </view>
+
+    <!-- 图片 -->
+    <!-- <view style="width:620rpx;height:280rpx;margin-top:8rpx;position:fixed;bottom:6rpx;">
+		<swiper autoplay='true' duration='1000' interval='1500' circular='true' easing-function='easeInOutCubic'>
+			<swiper-item>
+				<image bindtap="video_class" class="bottom_img" src="http://c.px.jiaodong.net/upimages/90/F2/C3/32/2705C02A.jpg"></image>
+			</swiper-item>
+			<swiper-item>
+				<image bindtap="video_class" class="bottom_img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1584405838910&di=e036b0dda34b0cb663786a3158cdaac5&imgtype=0&src=http%3A%2F%2Fgss0.baidu.com%2F-fo3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fpic%2Fitem%2F43a7d933c895d143fb605ffb74f082025baf07d7.jpg"></image>
+			</swiper-item>
+		</swiper>
+	</view> -->
+
+</view>
+
+<scroll-view class="{{is_xuanchuan==1?'container':'display_none'}}" style="width:750rpx;height:{{windowHeight+'px'}};position:fixed;top:0px;">
+    <video class="{{is_xuanchuan==1?'container':'display_none'}}" autoplay="true" style="width:750rpx;height:420rpx;" enable-play-gesture="true" src=""></video>
+    <view class="{{is_xuanchuan==1?'container':'display_none'}}" bindtap="close" style="width:750rpx;background:#189EFB;padding:10rpx 0;font-size:14px;">
+        <!-- <icon size="50" type="clear" bindtap="close"></icon> -->
+        返回
+    </view>
+    <scroll-view scroll-y="true" style="width:750rpx;height:470px; border:solid 1px;border-radius:12rpx;padding:10rpx;">相对于传统课堂，“Be英才”更突出课堂教学中各学科重点、难点，教学内容更加经典、精简！ “Be英才”弥补了传统课堂教学的不足，碎片化学习，积跬步以至千里。 “Be英才”知识点讲解由浅人深，由易到难，循序渐进，帮助孩子稳步提高学习成绩。 “Be英才”涵盖了最新高考咨询，以及高校学科专业，让学生提前了解高考相关信息，进而使学习目标更清晰！ “Be英才”提供了系列教程，以及深度定制教程，帮助学生制定学习计划以及相关疑难点答疑。 最后，感谢大家一直以来的支持，页相信“Be英才”是你快速提分的正确选择！
+    </scroll-view>
+</scroll-view>

@@ -1,0 +1,13 @@
+<view style="height:{{video_height+'px'}};width:750rpx;background:#efefef;" class="container">
+
+	<view id="video" class="container" style="width:750rpx;">
+		<video style="width:100%;" src="{{video.video_src}}" controls bindtap="" title="{{video.title}}" enable-play-gesture="true">
+		</video>
+		<view id="title" style="width:750rpx;padding: 20rpx;padding-left:60rpx;font-size:16px;background: #ddd;">
+			{{video.title}}
+		</view>
+	</view>
+	<scroll-view class="container" scroll-y="true" style="margin-top:8rpx;width:690rpx;height:{{scrollHeight+'px'}};padding: 8px;font-size:14px;margin-bottom: 10rpx;">
+			{{video.content}}
+	</scroll-view>
+</view>

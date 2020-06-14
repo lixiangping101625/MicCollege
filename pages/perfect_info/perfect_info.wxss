@@ -1,0 +1,24 @@
+.display_row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rpx;
+}
+.sept1{
+  width: 200rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+input{
+  width: 324rpx;
+}
+button{
+    background-color: #33ff66;
+    border-radius: 18rpx;
+}
+.zhifu{
+  border: solid 0px;
+}

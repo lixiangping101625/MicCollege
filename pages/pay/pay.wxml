@@ -1,0 +1,3 @@
+<view class="container">
+  <button bindtap="wx_pay">微信支付</button>
+</view>

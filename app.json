@@ -1,0 +1,79 @@
+{
+  "pages": [
+    "pages/video_class/video_class",
+    "pages/forum/forum",
+    "pages/home/home",
+    "pages/mine/mine",
+    "pages/tools/tools",
+    "pages/video_detail/video_detail",
+    "pages/perfect_info/perfect_info",
+    "pages/pay/pay",
+    "pages/logs/logs",
+    "pages/fill_skills_deatail/fill_skills_deatail",
+    "pages/product_intro_deatail/product_intro_deatail",
+    "pages/auth/auth",
+    "pages/line/line",
+    "pages/index/index",
+    "pages/zhiyuan_dynamic_detail/zhiyuan_dynamic_detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#b4b4b4",
+    "selectedColor": "#189EFB",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/video_class/video_class",  
+        "text": "课程",
+        "selectedIconPath": "icon/shipin1.png",
+        "iconPath": "icon/shipin2.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "高考",
+        "selectedIconPath": "icon/gk1.png",
+        "iconPath": "icon/gk2.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "selectedIconPath": "icon/mine1.png",
+        "iconPath": "icon/mine2.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "scorelines",
+      "pages": [
+        "scoreline/scoreline"
+      ]
+    },
+    {
+      "root": "reco",
+      "pages": [
+        "reco/school_reco/school_reco"
+      ]
+    }
+  ],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+
+  "usingComponents": {
+    "l-grid": "/lin-ui/grid/index",
+    "l-icon": "/lin-ui/icon/index",
+    "l-grid-item": "/lin-ui/grid-item/index",
+    "l-water-flow": "/lin-ui/water-flow/index",
+    "l-card": "/lin-ui/card/index",
+    "l-loading": "/lin-ui/loading/index",
+    "l-price": "/lin-ui/price/index",
+    "l-notice-bar": "/lin-ui/notice-bar/index",
+    "l-search-bar": "/lin-ui/search-bar/index",
+    "l-badge": "/lin-ui/badge/index"
+  }
+}

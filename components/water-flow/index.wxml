@@ -1,0 +1,14 @@
+  <view style="margin-bottom:20rpx;">
+  	<video style="width:350rpx;height:380rpx;" object-fit="fill" poster="{{data.img_src}}" src="{{data.video_src}}"></video>
+  	<view style="width:330rpx;height:auto;background:#fff;padding:10rpx;">
+  		<view>
+  			<text space="nbsp" style="color:#666;">{{data.title}}</text>
+  		</view>
+  		<view>
+  			<text space="nbsp" style="color:#666;">播放量：{{data.play_count}}</text>
+  		</view>
+  		<view>
+  			<text space="nbsp" style="color:#999;">主讲：{{data.teacher}}       {{data.release_time}}</text>
+  		</view>
+  	</view>
+  </view>

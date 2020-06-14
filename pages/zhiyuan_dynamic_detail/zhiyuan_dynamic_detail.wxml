@@ -1,0 +1,6 @@
+<view class="container" style="width:750rpx;">
+	<view style="width:730rpx;padding:20rpx;" class="container">
+		<view class="conteiner" style="margin-bottom:30rpx;font-weight:600;font-size:20px;background: #ddd;padding: 8rpx;">{{dynamic.title}}</view>
+		<view style="font-size:16px;">{{dynamic.content}}</view>
+	</view>
+</view>

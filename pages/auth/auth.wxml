@@ -1,0 +1,17 @@
+<view class="auth">
+  <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2522991458,2467450680&fm=26&gp=0.jpg" class="img" mode="aspectFill"></image>
+  <!-- <view class="title" style="font-size:18px;">微信授权</view> -->
+  <view class="describe" style="color:white;font-size:20px;">Be 英才,Just Be an genius!</view>
+  <view class="describe" style="color:white;font-size:20px;">没有最优秀，只有更优秀！</view>
+  <view class="describe" style="color:white;font-size:20px;">Be英才愿高考学子不负十年寒窗苦，蟾宫折桂在今朝!</view>
+  <button class="btn" open-type='getUserInfo' wx:if="{{canIUse && !getUserInfo}}" bindgetuserinfo='onAuth'>微信授权</button>
+  <!-- <navigator wx:if="{{!canIUse}}" class="btn" url="/pages/auth/auth" open-type="reLaunch" hover-class="other-navigator-hover">已经授权点击调转</navigator> -->
+
+  <view class=''>
+    <view wx:if="{{getUserInfo}}" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nick}}</text>
+  </view>
+  </view>
+
+</view>

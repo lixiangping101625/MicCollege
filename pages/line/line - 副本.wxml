@@ -1,0 +1,162 @@
+<view class="container">
+  <!-- tab:学校推荐、专业推荐、招生计划 -->
+  <view class="display_row" style="width:730rpx;border-bottom:solid 1px white;border-top:solid 1px white;background:#F1EFF6;">
+    <view bindtap="show_yxtj" style="width:50%;font-size:19px;border-right:solid 1px white;" class="{{show_yxtj===1?'display_row selected':'display_row'}}">高校推荐</view>
+    <view bindtap="show_zytj" style="width:50%;font-size:19px;border-right:solid 1px white;" class="{{show_zytj===1?'display_row selected':'display_row'}}">专业推荐</view>
+  </view>
+  <!-- tab1：学校推荐 -->
+  <view id="sch_recommend" wx:if="{{show_yxtj===1}}" class="container" style="width:730rpx;background-color:#F1EFF6;border:0 0 10rpx 10rpx;padding-bottom:12rpx;padding-top:12rpx;">
+    <!-- <view style="padding-top:6rpx;padding-bottom:6rpx;">院校推荐</view> -->
+    <view class="display_row" style="margin-top:5rpx;margin-bottom:5rpx;">
+      <view style="width:360rpx;" class="display_row">
+        <view style="width:100rpx;font-size:14px;">文理：</view>
+        <!-- <input placeholder="文/理科 下拉"></input> -->
+        <radio-group>
+          <radio checked="true">文科</radio>
+          <radio>理科</radio>
+        </radio-group>
+      </view>
+    </view>
+    <view class="display_row" style="margin-top:6rpx;">
+      <view style="width:360rpx;" class="display_row">
+        <view style="width:130rpx;font-size:14px;">总分</view>
+        <input style="background:#1f1f1f;" placeholder="总分(授权时必输)回显" style=""></input>
+      </view>
+      <view style="width:360rpx;" class="display_row">
+        <view style="width:130rpx;font-size:14px;">浮动：</view>
+        <input placeholder="浮动分数"></input>
+      </view>
+    </view>
+    <view class="display_row" style="margin-top:5rpx;margin-bottom:5rpx;">
+      <view style="width:360rpx;" class="display_row">
+        <view style="width:130rpx;font-size:14px;">省份：</view>
+        <input placeholder="下拉选择（必选）"></input>
+      </view>
+      <view style="width:360rpx;" class="display_row">
+        <view style="width:130rpx;font-size:14px;">城市：</view>
+        <input placeholder="下拉选择（可选）"></input>
+      </view>
+    </view>
+    <view class="display_row" style="margin-top:6rpx;">
+      <view style="width:360rpx;" class="display_row">
+        <view style="width:130rpx;font-size:14px;">院校：</view>
+        <input placeholder="可选" style=""></input>
+      </view>
+      <view style="width:360rpx;" class="display_row">
+        <view style="width:130rpx;font-size:14px;">专业：</view>
+        <input placeholder="下拉选择（可选）"></input>
+      </view>
+    </view>
+    <view style="width:700rpx;margin-top:24rpx;">
+      <view style="" class="display_row">
+        <button style="margin-right:5rpx;">按分数查询</button>
+        <button style="margin-left:5rpx;">按排名查询</button>
+      </view>
+    </view>
+  </view>
+  <!-- tab1：专业推荐 -->
+  <view id="prof_recommend1" wx:if="{{show_zytj===1}}" class="container" style="width:730rpx;background-color:#F1EFF6;border-radius:0 0 10rpx 10rpx;padding-bottom:12rpx;padding-top:12rpx;">
+    <!-- <view style="margin-bottom:6rpx;">专业推荐</view> -->
+    <view class="display_row" style="margin-top:5rpx;margin-bottom:32rpx;">
+      <view class="display_row">
+        <view style="font-size:14px;">推荐方式： </view>
+        <radio-group bindchange="reco_method">
+          <radio checked="{{reco_method===1}}" value="1">偏科</radio>
+          <radio checked="{{reco_method===2}}" value="2">专业关键词</radio>
+        </radio-group>
+      </view>
+    </view>
+
+
+    <!-- 偏科推荐 -->
+    <view wx:if="{{reco_method===1}}">
+      <view class="display_row" style="margin-top:5rpx;">
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;">语文：</view>
+          <input placeholder="语文"></input>
+        </view>
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;">数学：</view>
+          <input placeholder="数学"></input>
+        </view>
+      </view>
+      <view class="display_row" style="margin-top:6rpx;">
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;">英语</view>
+          <input placeholder="英语"></input>
+        </view>
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;display:none;">综合：</view>
+          <radio-group class="display_row" style="display:none;">
+            <radio checked="true">文综</radio>
+            <radio>
+            </radio>
+          </radio-group>
+        </view>
+      </view>
+      <view class="display_row" style="margin-top:6rpx;">
+        <view style="width:360rpx;" class="display_row" style="display:none;">
+          <view style="width:130rpx;font-size:14px;">英语</view>
+          <input placeholder="英语" style="display:none;"></input>
+        </view>
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;">综合：</view>
+          <radio-group class="display_row">
+            <radio checked="true">文综</radio>
+            <radio>理综</radio>
+          </radio-group>
+        </view>
+      </view>
+      <view class="display_row" style="margin-top:5rpx;">
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;">地理：</view>
+          <input placeholder="地理"></input>
+        </view>
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;">历史：</view>
+          <input placeholder="历史"></input>
+        </view>
+      </view>
+      <view class="display_row" style="margin-top:5rpx;">
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;">政治：</view>
+          <input placeholder="政治"></input>
+        </view>
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;" style="display:none">历史：</view>
+          <input placeholder="历史" style="display:none"></input>
+        </view>
+      </view>
+    </view>
+    <!-- 专业关键词 -->
+    <view wx:if="{{reco_method===2}}">
+      <view style="margin-top:8rpx;" class="display_row">
+        <view style="font-size:14px;">关键词1：</view>
+        <input placeholder=""></input>
+      </view>
+      <view style="margin-top:8rpx;" class="display_row">
+        <view style="font-size:14px;">关键词2：</view>
+        <input placeholder=""></input>
+      </view>
+      <view style="margin-top:8rpx;" class="display_row">
+        <view style="font-size:14px;">关键词3：</view>
+        <input placeholder=""></input>
+      </view>
+      <view style="margin-top:8rpx;" class="display_row">
+        <view style="font-size:14px;">关键词4：</view>
+        <input placeholder=""></input>
+      </view>
+    </view>
+
+
+    <view style="border-radius: 4px;margin-top:20rpx;" class="container">
+        <button style="margin-right:5rpx;">查看推荐专业</button>
+    </view>
+  </view>
+
+  <!-- 底部广告 -->
+  <view class="container" style="width:730rpx;position: absolute;bottom: 10px;">
+    <image style="width:730rpx;height: 320rpx;border-radius: 10rpx;" src="http://5b0988e595225.cdn.sohucs.com/q_70,c_zoom,w_640/images/20180525/7025d0edae1d4f3f99272fcaa1074f60.jpeg"></image>
+  </view>
+
+</view>

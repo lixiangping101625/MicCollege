@@ -1,0 +1,52 @@
+<view class="container">
+  <view class="container">
+    <!-- 标题 -->
+    <view style="font-size:16px;" class="display_row">{{fillSkills.title}}</view>
+    <view style="height:50rpx;padding:0 8rpx;"></view>
+
+    <view wx:if="{{fillSkills.section1_name!=null}}" style="background:white;">
+      <block wx:for="{{sectionEntities}}" wx:for-item="item" wx:for-index="index">
+        <image mode="aspectFit" wx:if="{{item.section_index==1 &&item.exist_img==1}}" style="width:750rpx;height:300rpx;" src="{{item.img_url}}"></image>
+      </block>
+      <view style="font-size:14px;" class="display_row">{{fillSkills.section1_name}}</view>
+      <view style="font-size:12px; pading:2rpx; 5rpx;">
+        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text> {{fillSkills.section1_content}}
+      </view>
+    </view>
+
+    <view wx:if="{{fillSkills.section2_name!=null}}" style="background:white;">
+      <block wx:for="{{sectionEntities}}" wx:for-item="item" wx:for-index="index">
+        <image mode="aspectFit" wx:if="{{item.section_index==2 &&item.exist_img==1}}" style="width:750rpx;height:300rpx;" src="{{item.img_url}}"></image>
+      </block>
+      <view style="font-size:14px;" class="display_row">{{fillSkills.section2_name}}</view>
+      <view style="font-size:12px; pading:2rpx; 5rpx;">
+        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text> {{fillSkills.section2_content}}
+      </view>
+    </view>
+
+    <view wx:if="{{fillSkills.section3_name!=null}}" style="background:white;">
+      <block wx:for="{{sectionEntities}}" wx:for-item="item" wx:for-index="index">
+        <image mode="aspectFit" wx:if="{{item.section_index==3 &&item.exist_img==1}}" style="width:750rpx;height:300rpx;" src="{{item.img_url}}"></image>
+      </block>
+      <view style="font-size:14px;" class="display_row">{{fillSkills.section3_name}}</view>
+      <view style="font-size:12px; pading:2rpx; 5rpx;">
+        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text> {{fillSkills.section3_content}}
+      </view>
+    </view>
+
+
+    <!-- 标题 -->
+    <!-- <view style="font-size:16px;" class="display_row">{{fillSkills.title}}</view>
+    <view style="height:50rpx;padding:0 8rpx;"></view>
+    <block wx:for="{{sectionEntities}}" wx:for-item="item" wx:for-index="index">
+      <view style="background:white;">
+        <image wx:if="{{item.exist_img==1}}" style="width:750rpx;height:300rpx;" src="{{item.img_url}}"></image>
+        <view style="font-size:14px;" class="display_row">{{item.section_name}}</view>
+        <view style="font-size:12px; pading:2rpx; 5rpx;">
+          <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text> {{item.section_content}}
+        </view>
+      </view>
+    </block> -->
+
+  </view>
+</view>

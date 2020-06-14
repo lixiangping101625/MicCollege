@@ -1,0 +1,72 @@
+/**app.wxss**/
+.container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 200rpx 0; */
+  box-sizing: border-box;
+  /* background-color: #ff4777; */
+  background-color: #F1EFF6;
+}
+
+.display_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  background-color: #fff;
+  border: solid 1px;
+  height: 54rpx;
+  width: 290rpx;
+}
+
+.display_none {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: #ff4777;
+}
+
+.juzhong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* view单行字数太多省略 */
+
+.simplerow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 底部图片 */
+.bottom_img {
+  width: 730rpx;
+  height: 250rpx;
+  border-radius: 10rpx;
+}
+
+button {
+  background-color: #33ff66;
+}
+
+.bottom_img {
+  height: 280rpx;
+}
+
+.out_view{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

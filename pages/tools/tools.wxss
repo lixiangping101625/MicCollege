@@ -1,0 +1,27 @@
+page {
+    background: #f1eff6;
+}
+
+.tool {
+    /* width: 162rpx; */
+    /* height: 72rpx; */
+    /* border-radius: 36rpx; */
+    font-size: 12px;
+    /* border: solid 1px #333; */
+    color:#189EFB;
+    border-bottom: solid 1px #189EFB;
+}
+
+.mengban {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99999;
+}

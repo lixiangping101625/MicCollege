@@ -1,0 +1,36 @@
+#card {
+    width: 100%;
+    height: 100%;
+    /* background: url('http://5b0988e595225.cdn.sohucs.com/q_70,c_zoom,w_640/images/20180525/7025d0edae1d4f3f99272fcaa1074f60.jpeg'); */
+    background: linear-gradient(to bottom, #189efb, #6dc1fc);
+    /* background-size: cover; */
+}
+
+.oper {
+    width: 680rpx;
+    height: 110rpx;
+    background: #fff;
+    font-size: 22px;
+    margin-bottom: 8rpx;
+    border-bottom: solid 1px #ededed;
+}
+
+.btn {
+    background-color: #189efb;
+    width: 710rpx;
+    text-align: left;
+}
+
+.button-hover {
+    background-color: #fdf1df;
+}
+
+page {
+    background: #f1eff6;
+}
+
+image {
+    width: 20px;
+    height: 20px;
+    margin-right: 20rpx;
+}

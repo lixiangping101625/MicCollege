@@ -1,0 +1,173 @@
+<view class="container">
+  <!-- tab:学校推荐、专业推荐、招生计划 -->
+  <view class="display_row" style="width:730rpx;border-bottom:solid 1px white;border-top:solid 1px white;background:#F1EFF6;">
+    <view bindtap="show_yxtj" style="width:50%;font-size:19px;border-right:solid 1px white;" class="{{show_yxtj===1?'display_row selected':'display_row'}}">高校优先</view>
+    <view bindtap="show_zytj" style="width:50%;font-size:19px;border-right:solid 1px white;" class="{{show_zytj===1?'display_row selected':'display_row'}}">专业优先</view>
+  </view>
+  <!-- tab1：学校推荐 -->
+  <view id="sch_recommend" wx:if="{{show_yxtj===1}}" class="container" style="width:730rpx;background-color:#F1EFF6;border:0 0 10rpx 10rpx;padding-bottom:12rpx;padding-top:12rpx;">
+    <!-- <view style="padding-top:6rpx;padding-bottom:6rpx;">院校推荐</view> -->
+    <view class="display_row" style="margin-top:5rpx;margin-bottom:5rpx;">
+      <view style="width:360rpx;" class="display_row">
+        <view style="width:100rpx;font-size:14px;">文理：</view>
+        <radio-group bindchange="bindGeneraChange">
+          <radio checked="true" value="0">文科</radio>
+          <radio value="1">理科</radio>
+        </radio-group>
+      </view>
+    </view>
+    <view class="display_row" style="margin-top:5rpx;margin-bottom:5rpx;">
+     <view style="width:360rpx;" class="display_row">
+        <view style="width:130rpx;font-size:14px;">省份</view>
+        <input bindinput="inputscore" placeholder="点击选择省份" type="digit" bindtap="choose_prov" disabled="true"></input>
+      </view>
+     <view style="width:360rpx;" class="display_row">
+        <view style="width:130rpx;font-size:14px;">城市</view>
+        <input bindinput="inputscore" placeholder="下拉选择地级市" type="digit" bindtap="choose_prov" disabled="true"></input>
+      </view>
+    </view>
+    <view class="display_row" style="margin-top:6rpx;">
+      <view style="width:360rpx;" class="display_row">
+        <view style="width:130rpx;font-size:14px;">总分</view>
+        <input bindinput="inputscore" placeholder="总分(首次需输入)回显" type="digit" value="{{total_score}}"></input>
+      </view>
+      <view style="width:360rpx;" class="display_row">
+        <view style="width:130rpx;font-size:14px;">浮动：</view>
+        <input bindinput="inputflowscore" type="number" placeholder="浮动分数" value="{{flow_score}}"></input>
+      </view>
+    </view>
+    <view style="width:700rpx;margin-top:24rpx;">
+      <view style="" class="display_row">
+        <button bindtap="submit_reco_score" style="margin-right:5rpx;">按分数推荐</button>
+        <button bindtap="submit_reco_rank" style="margin-left:5rpx;">按排名推荐</button>
+      </view>
+    </view>
+
+    <view style="margin-top:25rpx;">1、结合'成绩、文理科' 推荐出省份（地级市）下的所有学校</view>
+    <view>2、点击一个学校后，展示该学校下的可以填报的所有专业及分数线</view>
+  </view>
+  <!-- tab1：专业推荐 -->
+  <view id="prof_recommend1" wx:if="{{show_zytj===1}}" class="container" style="width:730rpx;background-color:#F1EFF6;border-radius:0 0 10rpx 10rpx;padding-bottom:12rpx;padding-top:12rpx;">
+    <!-- <view style="margin-bottom:6rpx;">专业推荐</view> -->
+    <view class="display_row" style="margin-top:5rpx;margin-bottom:32rpx;">
+      <view class="display_row">
+        <view style="font-size:14px;">推荐方式： </view>
+        <radio-group bindchange="reco_method">
+          <radio style="color: blue;font-size:14px;" checked="{{reco_method===1}}" value="1">偏科</radio>
+          <radio style="color: blue;font-size:14px;" checked="{{reco_method===2}}" value="2">专业关键词</radio>
+        </radio-group>
+      </view>
+    </view>
+    <view class="display_row" style="margin-top:5rpx;">
+      <view style="width:360rpx;" class="display_row">
+        <view style="width:130rpx;font-size:14px;">省份：</view>
+        <input placeholder="必选"></input>
+      </view>
+      <view style="width:360rpx;" class="display_row">
+        <view style="width:130rpx;font-size:14px;">城市：</view>
+        <input placeholder="可选"></input>
+      </view>
+    </view>
+
+
+    <!-- 偏科推荐 -->
+    <view wx:if="{{reco_method===1}}">
+      <view class="display_row" style="margin-top:5rpx;">
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;">语文：</view>
+          <input placeholder="语文"></input>
+        </view>
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;">数学：</view>
+          <input placeholder="数学"></input>
+        </view>
+      </view>
+      <view class="display_row" style="margin-top:6rpx;">
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;">英语</view>
+          <input placeholder="英语"></input>
+        </view>
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;display:none;">综合：</view>
+          <radio-group class="display_row" style="display:none;">
+            <radio checked="true">文综</radio>
+            <radio>
+            </radio>
+          </radio-group>
+        </view>
+      </view>
+      <view class="display_row" style="margin-top:6rpx;">
+        <view style="width:360rpx;" class="display_row" style="display:none;">
+          <view style="width:130rpx;font-size:14px;">英语</view>
+          <input placeholder="英语" style="display:none;"></input>
+        </view>
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;">综合：</view>
+          <radio-group class="display_row">
+            <radio style="font-size:14px;" checked="true">文科</radio>
+            <radio style="font-size:14px;">理科</radio>
+          </radio-group>
+        </view>
+      </view>
+      <view class="display_row" style="margin-top:5rpx;">
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;">地理：</view>
+          <input placeholder="地理"></input>
+        </view>
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;">历史：</view>
+          <input placeholder="历史"></input>
+        </view>
+      </view>
+      <view class="display_row" style="margin-top:5rpx;">
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;">政治：</view>
+          <input placeholder="政治"></input>
+        </view>
+        <view style="width:360rpx;" class="display_row">
+          <view style="width:130rpx;font-size:14px;" style="display:none">历史：</view>
+          <input placeholder="历史" style="display:none"></input>
+        </view>
+      </view>
+    </view>
+    <!-- 专业关键词 -->
+    <view wx:if="{{reco_method===2}}">
+      <view class="display_row" style="margin-top:5rpx;">
+        <view style="margin-top:8rpx;" class="display_row">
+          <view style="font-size:14px;">关键词：</view>
+          <input style="width: 230rpx;"></input>
+        </view>
+        <view style="margin-top:8rpx;" class="display_row">
+          <view style="font-size:14px;">关键词：</view>
+          <input style="width: 230rpx;"></input>
+        </view>
+      </view>
+      <view class="display_row" style="margin-top:5rpx;">
+        <view style="margin-top:8rpx;" class="display_row">
+          <view style="font-size:14px;">关键词：</view>
+          <input style="width: 230rpx;"></input>
+        </view>
+        <view style="margin-top:8rpx;" class="display_row">
+          <view style="font-size:14px;">关键词：</view>
+          <input style="width: 230rpx;"></input>
+        </view>
+      </view>
+    </view>
+
+
+    <view style="border-radius: 4px;margin-top:20rpx;" class="container">
+      <button style="margin-right:5rpx;">推荐专业</button>
+    </view>
+
+
+    <view>1、点击'推荐专业'后，会结合'省份、城市、偏科或意向专业关键词' 推荐专业列表</view>
+    <view>2、点击一个专业后，会展示在指定省份（地级市）有该专业的所有学校的该专业的分数线列表</view>
+
+  </view>
+
+  <!-- 底部广告 -->
+  <view class="container" style="width:730rpx;position: absolute;bottom: 10px;">
+    <image style="width:730rpx;height: 320rpx;border-radius: 10rpx;" src="http://5b0988e595225.cdn.sohucs.com/q_70,c_zoom,w_640/images/20180525/7025d0edae1d4f3f99272fcaa1074f60.jpeg"></image>
+  </view>
+
+</view>

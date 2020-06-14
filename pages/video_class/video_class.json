@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "l-countdown": "/lin-ui/countdown/index",
+    "q-water-flow": "/components/water-flow/index"
+  },
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "视频推荐",
+  "navigationBarBackgroundColor": "#189EFB",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true
+}

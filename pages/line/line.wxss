@@ -1,0 +1,28 @@
+.selected {
+  color: #000;
+  /* background-color: #ff4777; */
+  border-bottom: solid 2px #ff4777;
+}
+
+button {
+  background-color: #ff4777;
+}
+
+.z-index-999 {
+  z-index: -999;
+  background: aqua;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.z-index999 {
+  z-index: 999;
+  background: aqua;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+view{
+  font-size: 12px;
+}

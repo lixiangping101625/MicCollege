@@ -1,0 +1,32 @@
+page{
+  background:#F1EFF6;
+}
+.section {
+  width: 680rpx;
+  background: white;
+  padding: 12rpx;
+  border-radius: 13rpx;
+  margin: 12rpx 0;
+}
+
+.head {
+  width: 20%;
+  margin-left: 13rpx;
+  border-right: solid 1px;
+}
+
+.yichu {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+view{
+  font-size: 14px;
+}
+
+.loading-img{
+  border-radius: 50%;
+  width: 260rpx;
+  height: 260rpx;
+}
