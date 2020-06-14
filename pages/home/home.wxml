@@ -35,7 +35,7 @@
 			<view class="container1" style="margin-top:18rpx;background:#fff;width:710rpx;padding-left:20rpx;border-radius:18rpx;">
 				<view style="width:678rpx;margin:20rpx 0" class="display_row">
 					<view style="width:92rpx;font-size:14px;">省份：</view>
-					<picker bindchange="bindPickerChange4" value="{{prov_index}}" range="{{provinces}}" range-key="name">
+					<picker bindchange="bindPickerChange" value="{{prov_index}}" range="{{provinces}}" range-key="name">
 						<view style="width:478rpx;border-bottom: solid 1px;height: 54rpx;" class="juzhong simplerow">
 							{{provinces[prov_index].name}}
 						</view>
