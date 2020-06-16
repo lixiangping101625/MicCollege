@@ -1,34 +1,10 @@
 <view class="{{show_guide?'hide_guide':'container'}}" style="padding:0 20rpx;">
+	<image style="width:750rpx;height:260rpx;" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1592329066143&di=720ed768723752d9628f98ab774590b2&imgtype=0&src=http%3A%2F%2Fpic210.nipic.com%2Ffile%2F20190319%2F3088286_141834328081_2.jpg"></image>
 
-	<!-- 卡片展示 -->
-	<swiper vertical="true" interval="3000" circular="true" indicator-dots indicator-color="#f1f1f1" indicator-active-color="#189EFB" autoplay>
-		<swiper-item>
-			<l-card image-mode="scaleToFill" type="primary" l-class="l-class" l-img-class="l-img-class" position="right" full="true" image="{{fill_skill_list[0].sectionEntities[0].img_url}}" title="{{fill_skill_list[0].fillSkills.title}}">
-				<view class="content">
-					{{fill_skill_list[0].fillSkills.section1_content}}
-				</view>
-			</l-card>
-			<l-card type="primary" l-class="l-class" l-img-class="l-img-class" position="left" full="true" image="{{fill_skill_list[1].sectionEntities[1].img_url}}" title="{{fill_skill_list[1].fillSkills.title}}">
-				<view class="content">
-					{{fill_skill_list[1].fillSkills.section1_content}}
-				</view>
-			</l-card>
-		</swiper-item>
-		<swiper-item>
-			<l-card type="primary" l-class="l-class" l-img-class="l-img-class" position="right" full="true" image="{{fill_skill_list[0].sectionEntities[0].img_url}}" title="{{fill_skill_list[0].fillSkills.title}}">
-				<view class="content">
-					{{fill_skill_list[0].fillSkills.section1_content}}
-				</view>
-			</l-card>
-			<l-card type="primary" l-class="l-class" l-img-class="l-img-class" position="left" full="true" image="{{fill_skill_list[1].sectionEntities[1].img_url}}" title="{{fill_skill_list[1].fillSkills.title}}">
-				<view class="content">
-					{{fill_skill_list[1].fillSkills.section1_content}}
-				</view>
-			</l-card>
-		</swiper-item>
-	</swiper>
+	<l-notice-bar type="roll" show="{{true}}" l-class="notice">
+		志愿填报技巧分析，院校VS专业
+	</l-notice-bar>
 
-	<!-- 下部分 -->
 	<view style="margin-top:8rpx;width:710rpx;" class="position_relative">
 		<view style="width:710rpx;background:none;border-radius:8rpx;padding:8rpx;" class="container">
 			<view style="width:710rpx; font-size: 16px;font-weight: 500;margin-top:15rpx;">分数线查询</view>
@@ -40,14 +16,6 @@
 							{{provinces[prov_index].name}}
 						</view>
 					</picker>
-
-
-					<!-- <view style="width:92rpx;font-size:14px;padding-top:40rpx;">省份：</view>
-                    <picker bindchange="bindPickerChange" value="{{prov_index}}" range="{{provinces}}" range-key="name">
-                        <view style="width:478rpx;border-bottom: solid 1px;height: 54rpx;background:auqa;" class="juzhong">
-                            {{provinces[prov_index].name}}
-                        </view>
-                    </picker> -->
 				</view>
 				<view style="width:678rpx;margin-bottom:20rpx" class="display_row">
 					<view style="width:92rpx;font-size:14px;">城市：</view>
@@ -80,15 +48,6 @@
 							{{professions[profession_index].name}}
 						</view>
 					</picker>
-
-
-					<!-- <view style="width:92rpx;font-size:14px;">专业：</view>
-                    <picker wx:if="{{professions.length>0}}" bindchange="bindPickerChange4" value="{{profession_index}}" range="{{professions}}" range-key="name">
-                        <view style="width:478rpx;border-bottom: solid 1px;height: 54rpx;" class="juzhong simplerow">
-                            {{professions[profession_index].name}}
-                        </view>
-                    </picker> -->
-					<!-- <view wx:if="{{professions.length===0}}" style="width:300rpx;border: solid 1px;height: 54rpx;font-size: 12px;color: #ababab;" class="juzhong"></view> -->
 				</view>
 				<view style="width:570rpx;margin-bottom:40rpx;margin-top:20rpx;background:#fff;" class="container">
 					<view bindtap="query_line" class="container btn" style="margin-left:106rpx;margin-top:5rpx;width:100%;line-height: 31px;background:#189EFB;color:#fff;height: 40px;font-size: 14px;justify-content:center;">查询</view>

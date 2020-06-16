@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/video_class/video_class",
+    "pages/zixun/zixun",
     "pages/forum/forum",
-    "pages/home/home",
+    "pages/chaxun/chaxun",
     "pages/mine/mine",
     "pages/tools/tools",
     "pages/video_detail/video_detail",
@@ -28,20 +28,20 @@
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/video_class/video_class",  
-        "text": "课程",
+        "pagePath": "pages/zixun/zixun",  
+        "text": "高考咨询",
         "selectedIconPath": "icon/shipin1.png",
         "iconPath": "icon/shipin2.png"
       },
       {
-        "pagePath": "pages/home/home",
-        "text": "高考",
+        "pagePath": "pages/chaxun/chaxun",
+        "text": "分数查询",
         "selectedIconPath": "icon/gk1.png",
         "iconPath": "icon/gk2.png"
       },
       {
         "pagePath": "pages/mine/mine",
-        "text": "我的",
+        "text": "个人中心",
         "selectedIconPath": "icon/mine1.png",
         "iconPath": "icon/mine2.png"
       }

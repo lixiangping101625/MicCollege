@@ -5,11 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    fill_skill_list: [],//填报技巧
-
     //控制启动图片
     show_guide: 0,
-
     /**
      * picker--省份
      */
@@ -427,56 +424,16 @@ Page({
       complete: function (res) { },
     })
   },
-  
-  //跳转到tbjq详情界面
-  fill_skill_deail: function (e) {
-    // console.log(e.currentTarget.dataset.idx)
-    var fill_id = e.currentTarget.dataset.idx;
-    wx.navigateTo({
-      url: '../fill_skills_deatail/fill_skills_deatail?fill_id=' + fill_id,
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
-    })
-  },
-  //Jump to product details page
-  intro_deail: function (e) {
-    // console.log(e.currentTarget.dataset.idx)
-    var introduce_id = e.currentTarget.dataset.idx;
-    wx.navigateTo({
-      url: '../product_intro_deatail/product_intro_deatail?introduce_id=' + introduce_id,
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
-    })
-  },
-  //跳转到志愿专栏
-  tools: function () {
-    console.log(666333)
-    wx.navigateTo({
-      url: '/pages/tools/tools',
-    })
-  },
-
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.fill_skills();
     var windowHeight = wx.getSystemInfoSync().windowHeight
     this.setData({
       window_height: windowHeight
     })
     this.get_provinces();
-  },
-  show_more: function () {
-    wx.navigateTo({
-      url: '../tools/tools',
-      complete: (res) => { },
-      fail: (res) => { },
-      success: (res) => { },
-    })
   },
 
   /**

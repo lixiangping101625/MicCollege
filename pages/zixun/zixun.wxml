@@ -1,0 +1,48 @@
+<view class="{{show_guide?'hide_guide':'container'}}">
+	<view style="width:750rpx;">
+		<view wx:if="{{!counterend}}" style="background:#189EFB;color:#fff;font-size:20px;text-align:center;padding:20rpx 0;">
+			距离 2020-07-07 全国统一高考仅剩
+		</view>
+		<view wx:if="{{counterend}}" style="background:#189EFB;color:#fff;font-size:20px;text-align:center;padding:12rpx 40rpx;background-color:#F1EFF6;color:#189EFB;font-weight:600;">
+			'高考战役'已打响!祝愿莘莘学子学有所成、稳定发挥、金榜题名！
+		</view>
+		<l-countdown wx:if="{{!counterend}}" bind:linend="counterend" time="2020-06-16 23:28:55" format="{%d}天{%h}时{%m}分{%s}秒" l-class="countdown" l-time-class="digit"></l-countdown>
+
+		<view style="background:#189EFB;color:#fff;font-size:20px;text-align:center;padding-bottom:20rpx;">
+		</view>
+		<view style="background:#189EFB;color:#fff;font-size:20px;text-align:center;padding-bottom:20rpx;">
+			<swiper circular="true" indicator-dots indicator-color="#f1f1f1" indicator-active-color="#189EFB" autoplay>
+				<swiper-item>
+					<video object-fit="cover" title="不负十年寒窗苦，为得金榜题名时！" controls page-gesture="true" 
+								poster="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4228225314,3099502338&fm=26&gp=0.jpg" 
+								style="height:300rpx;" 
+								src="https://vdept.bdstatic.com/5267435763426b6d7a5152486a635949/693474726a76667a/b667f8b7134b8c9ad60763d32f182aa4671ec739ac3ab7d2aa159aa2baca7551d8bae6130bedf6a3599e1f88b7ab8c92.mp4?auth_key=1589986825-0-0-4d79d8da066c6999945f7e9b3f3828f8"></video>
+				</swiper-item>
+				<swiper-item>
+					<image style="height:300rpx;" bindtap="switch2GK" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=52948074,118365050&fm=26&gp=0.jpg"></image>
+				</swiper-item>
+				<swiper-item>
+					<image style="height:300rpx;" bindtap="" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590033805097&di=67f470f81f9dac21a6310cac8ddc2f92&imgtype=0&src=http%3A%2F%2Fp2.qhimgs4.com%2Ft016b9c7af37c10824d.jpg"></image>
+				</swiper-item>
+				<swiper-item>
+					<image style="height:300rpx;" bindtap="" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590033869755&di=243bd16635ca35f170ad7830dd1c88b4&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180322%2F6aa0fb833540494fa937be8fff442d23.jpeg"></image>
+				</swiper-item>
+			</swiper>
+
+		</view>
+	</view>
+
+	<l-notice-bar type="roll" show="{{true}}" l-class="notice">
+		生如蝼蚁，当有鸿鹄之志！命比纸薄，当有不屈之心！
+	</l-notice-bar>
+</view>
+
+<!-- 卡片展示 -->
+	
+		<block wx:for="{{fill_skill_list}}">
+			<l-card image-mode="scaleToFill" type="primary" l-class="l-class" l-img-class="l-img-class" position="right" full="true" image="{{item.sectionEntities[0].img_url}}" title="{{item.fillSkills.title}}">
+				<view class="content">
+					{{item.fillSkills.section1_content}}
+				</view>
+			</l-card>
+		</block>
